@@ -25,8 +25,7 @@ namespace MiniORM
         public void Add(TEntity item)
         {
             this.Entities.Add(item);
-            this.ChangeTracker.Add(item); // Notification to the change tracker about the added entity record
-        }
+            this.ChangeTracker.Add(item); 
 
         public void Clear()
         {
@@ -52,7 +51,7 @@ namespace MiniORM
             bool isRemoved = this.Entities.Remove(item);
             if (isRemoved)
             {
-                this.ChangeTracker.Remove(item); // Notification to ChangeTracker about the removed entity record
+                this.ChangeTracker.Remove(item);
             }
 
             return isRemoved;
@@ -65,7 +64,7 @@ namespace MiniORM
                 bool result = this.Remove(entityToRemove);
                 if (!result)
                 {
-                    return false; // Stop the removing since we have invalid parameter
+                    return false; 
                 }
             }
 
